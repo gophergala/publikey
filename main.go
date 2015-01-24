@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
+	"github.com/gerred/publikey/publikey"
 )
 
 func main() {
@@ -13,6 +14,9 @@ func main() {
 	app.Email = Email
 	app.Version = Version
 	app.Usage = "interact with the publikey API for public SSH key management"
+	app.Commands = []cli.Command{
+		publikey.NewListCommand(),
+	}
 
 	app.Run(os.Args)
 }
