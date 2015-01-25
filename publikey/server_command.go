@@ -17,10 +17,15 @@ func NewServerCommand() cli.Command {
 				Value: "7890",
 				Usage: "port to run the publikey server on",
 			},
+			cli.StringFlag{
+				Name:  "data-file",
+				Value: "publikey.db",
+				Usage: "location for the BoltDB database",
+			},
 		},
 	}
 }
 
 func handleServerCommand(c *cli.Context) {
-	server.Serve(c.String("port"))
+	server.Serve(c.String("port"), c.String("data-file"))
 }
