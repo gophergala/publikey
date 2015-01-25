@@ -16,6 +16,7 @@ func main() {
 	app.Usage = "interact with the publikey API for public SSH key management"
 	app.Commands = []cli.Command{
 		publikey.NewListCommand(),
+		publikey.NewServerCommand(),
 	}
 
 	app.Run(os.Args)
