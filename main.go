@@ -19,5 +19,17 @@ func main() {
 		publikey.NewServerCommand(),
 	}
 
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "host, H",
+			Value: "localhost:8080",
+			Usage: "publikey host url (including port)",
+		},
+		cli.StringFlag{
+			Name:  "user, u",
+			Usage: "publikey user, if not logged in",
+		},
+	}
+
 	app.Run(os.Args)
 }
