@@ -53,10 +53,10 @@ func Serve(port string, dbfile string) {
 		r.JSON(200, struct{}{})
 	})
 
+	m.Post("/keys", addKey)
 	m.Group("/users", func(r martini.Router) {
 		r.Group("/:email", func(k martini.Router) {
 			r.Get("/keys", getKeys)
-			r.Post("/keys", addKey)
 		})
 		r.Post("/new", register)
 	})
