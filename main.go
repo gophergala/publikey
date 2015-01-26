@@ -24,7 +24,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "host, H",
-			Value: "localhost:8080",
+			Value: "api.publikey.io",
 			Usage: "publikey host url (including port)",
 		},
 		cli.StringFlag{

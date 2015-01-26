@@ -1,7 +1,6 @@
 package publikey
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
