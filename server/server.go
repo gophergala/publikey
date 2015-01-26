@@ -159,14 +159,12 @@ func register(r render.Render, hr *http.Request) {
 		b := tx.Bucket([]byte("Data"))
 		v := b.Get([]byte(email))
 		if v != nil {
-			r.Status(http.StatusBadRequest)
 			return errors.New("already exists")
 		}
 		return nil
 	})
 
 	if err != nil || email == "" || password == "" {
-		log.Fatal(err)
 		r.Status(http.StatusBadRequest)
 		return
 	}

@@ -17,6 +17,7 @@ func main() {
 	app.Commands = []cli.Command{
 		publikey.NewListCommand(),
 		publikey.NewServerCommand(),
+		publikey.NewRegisterCommand(),
 	}
 
 	app.Flags = []cli.Flag{
